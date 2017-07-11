@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+			<bean id="customerValidator" class="com.foodapp.spring.controller.CustomerValidator"></bean>
+			<!-- <bean id="recipeValidator" class="com.foodapp.spring.controller.RecipeValidator"></bean> -->
+			<bean id="loginDao" class="com.foodapp.spring.dao.LoginDAO"></bean>
+ 						   <bean id="cuisineDao" class="com.foodapp.spring.dao.CuisineDAO"></bean>
+ 						<bean id="chefValidator" class="com.foodapp.spring.controller.ChefValidator"></bean>
+ 						 <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />
+ 	 		 <bean id="velocityConfig"
+      class="org.springframework.web.servlet.view.velocity.VelocityConfigurer">
+      <property name="resourceLoaderPath" value="/WEB-INF/views/">
+      </property>
+  </bean>
+ 
+ 
+  <bean id="viewResolver"
+      class="org.springframework.web.servlet.view.velocity.VelocityLayoutViewResolver">
+      <property name="cache" value="true" />
+      <property name="prefix" value="/WEB-INF/views/" />
+      <property name="layoutUrl" value="/WEB-INF/layouts/layout.vm" />
+      <property name="suffix" value=".vm" />
+  </bean>
+ 			<!-- 	 <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+   
+    <property name="host" value="smtp.gmail.com" />
+    <property name="port" value="587" />
+    <property name="username" value="vegashetty" />
+    <property name="password" value="@Flitwick12" />
+ 
+    <property name="javaMailProperties">
+
+        <props>
+            <prop key="mail.transport.protocol">smtp</prop>
+            <prop key="mail.smtp.auth">true</prop>
+            <prop key="mail.smtp.starttls.enable">true</prop>
+        </props>
+    </property>
+</bean>  --> 
+</beans>
